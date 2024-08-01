@@ -326,7 +326,7 @@ $('#search-input').on('input', fetchAndDisplayCourses);
     }
     
     bootUp();
-}
+});
 
 /*
 function bootUp() {
