@@ -1,4 +1,3 @@
-
 /* Quote Carousel */
 
 $(document).ready(function() {
@@ -72,20 +71,35 @@ $(document).ready(function() {
 
                 response.forEach(function(data) {
                     console.log("Adding card for video:", data.title);
+                    const starRating = $("<div>").addClass("rating d-flex mt-2");
+                    const totalStars = 5;
+
+                    for (let i = 0; i < totalStars; i++) {
+                        if (i < data.star) {
+                            starRating.append(
+                                $("<img>").addClass("star-icon").attr("src", "images/star_on.png").attr("width", "15px")
+                            );
+                        } else {
+                            starRating.append(
+                                $("<img>").addClass("star-icon").attr("src", "images/star_off.png").attr("width", "15px")
+                            )
+                        }
+                    };
                     const card = $("<div>").addClass("card mx-3").append(
                         $("<img>").addClass("card-img-top img-fluid mx-auto").attr("src", data.thumb_url),
                         $("<div>").addClass("card-img-overlay d-flex text-center").append(
-                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "images/play.png").attr("width", "55px")
+                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "/images/play.png").attr("width", "55px")
                         ),
                       $("<div>").addClass("card-main").append(
-                            $("<h5>").addClass("card-title").text(data.title),
+                            $("<h5>").addClass("card-title mt-2").css("font-weight", "bold").text(data.title),
                             $("<p>").addClass("card-text").text(data["sub-title"]),
                             $("<div>").addClass("author-info d-flex").append(
-                                $("<img>").addClass("rounded-circle").attr("src", data.author_pic_url).attr("width", "25px"),
-                               $("<h6>").addClass("popular-author").text(data.author)
+                                $("<img>").addClass("rounded-circle").attr("src", data.author_pic_url).attr("width", "35px"),
+                                $("<h6>").addClass("popular-author mx-3 mt-2").css({"color": "var(--main-color)", "font-weight": "bold"}).text(data.author)
                             ),
                             $("<div>").addClass("rating-info d-flex justify-content-between").append(
-                                $("<div>").addClass("rating d-flex")
+                                starRating,
+                                $("<span>").addClass("duration").css("color", "var(--main-color)").text(data.duration)
                             )
                         )
                     );
@@ -145,20 +159,35 @@ $(document).ready(function() {
 
                 response.forEach(function(data) {
                     console.log("Adding card for video:", data.title);
+                    const starRating = $("<div>").addClass("rating d-flex mt-2");
+                    const totalStars = 5;
+
+                    for (let i = 0; i < totalStars; i++) {
+                        if (i < data.star) {
+                            starRating.append(
+                                $("<img>").addClass("star-icon").attr("src", "images/star_on.png").attr("width", "15px")
+                            );
+                        } else {
+                            starRating.append(
+                                $("<img>").addClass("star-icon").attr("src", "images/star_off.png").attr("width", "15px")
+                            )
+                        }
+                    };
                     const card = $("<div>").addClass("card mx-3").append(
                         $("<img>").addClass("card-img-top img-fluid mx-auto").attr("src", data.thumb_url),
                         $("<div>").addClass("card-img-overlay d-flex text-center").append(
-                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "images/play.png").attr("width", "55px")
+                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "/images/play.png").attr("width", "55px")
                         ),
                       $("<div>").addClass("card-main").append(
-                            $("<h5>").addClass("card-title").text(data.title),
+                            $("<h5>").addClass("card-title mt-2").css("font-weight", "bold").text(data.title),
                             $("<p>").addClass("card-text").text(data["sub-title"]),
                             $("<div>").addClass("author-info d-flex").append(
-                                $("<img>").addClass("rounded-circle").attr("src", data.author_pic_url).attr("width", "25px"),
-                               $("<h6>").addClass("popular-author").text(data.author)
+                                $("<img>").addClass("rounded-circle").attr("src", data.author_pic_url).attr("width", "35px"),
+                                $("<h6>").addClass("popular-author mx-3 mt-2").css({"color": "var(--main-color)", "font-weight": "bold"}).text(data.author)
                             ),
                             $("<div>").addClass("rating-info d-flex justify-content-between").append(
-                                $("<div>").addClass("rating d-flex")
+                                starRating,
+                                $("<span>").addClass("duration").css("color", "var(--main-color)").text(data.duration)
                             )
                         )
                     );
@@ -274,20 +303,36 @@ function fetchAndDisplayCourses() {
 
             courses.forEach(function(course) {
                 console.log("Adding card for video:", course.title);
+                const starRating = $("<div>").addClass("rating d-flex mt-2");
+                const totalStars = 5;
+
+                    for (let i = 0; i < totalStars; i++) {
+                        if (i < course.star) {
+                            starRating.append(
+                                $("<img>").addClass("star-icon").attr("src", "images/star_on.png").attr("width", "15px")
+                            );
+                        } else {
+                            starRating.append(
+                                $("<img>").addClass("star-icon").attr("src", "images/star_off.png").attr("width", "15px")
+                            )
+                        }
+                    };
                 const card = $("<div>").addClass("col-12 col-md-4 col-lg-3 mb-4").append(
                     $("<img>").addClass("card-img-top img-fluid mx-auto").attr("src", course.thumb_url),
                     $("<div>").addClass("card-img-overlay d-flex text-center").append(
-                        $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "images/play.png").attr("width", "55px")
+                        $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "/images/play.png").attr("width", "55px")
                     ),
                     $("<div>").addClass("card-main").append(
-                        $("<h5>").addClass("card-title").text(course.title),
+                        $("<h5>").addClass("card-title mt-2").css("font-weight", "bold").text(course.title),
                         $("<p>").addClass("card-text").text(course["sub-title"]),
                         $("<div>").addClass("author-info d-flex").append(
-                            $("<img>").addClass("rounded-circle").attr("src", course.author_pic_url).attr("width", "25px"),
-                            $("<h6>").addClass("popular-author").text(course.author)
+                            $("<img>").addClass("rounded-circle").attr("src", course.author_pic_url).attr("width", "35px"),
+                            $("<h6>").addClass("popular-author mx-3 mt-2").css({"color": "var(--main-color)", "font-weight": "bold"}).text(course.author)
                         ),
                         $("<div>").addClass("rating-info d-flex justify-content-between").append(
-                            $("<div>").addClass("rating d-flex")
+                            starRating,
+                            $("<span>").addClass("duration").css("color", "var(--main-color)").text(course.duration)
+
                         )
                     )
                 );
