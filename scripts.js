@@ -326,9 +326,9 @@ $('#search-input').on('input', fetchAndDisplayCourses);
     }
     
     bootUp();
+}
 
-    /*
-
+/*
 function bootUp() {
 
     const path = window.location.pathname;
@@ -345,13 +345,4 @@ function bootUp() {
 }
 bootUp();
 });
-
 */
-
-    
-   
-
-
-
-
-
