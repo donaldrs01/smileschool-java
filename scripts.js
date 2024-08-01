@@ -215,6 +215,8 @@ $(document).ready(function() {
                 const newDropdownItem = $(`<a class="dropdown-item" href="#" data-value="${topic}">${topic}</a>`);
                 topicDropdownMenu.append(newDropdownItem);
             });
+            const dropdownElemeent = document.getElementById("topicDropdown");
+            const dropdown = new bootstrap.Dropdown(dropdownElemeent);
 
             topicDropdownMenu.on("click", ".dropdown-item", function(e) {
                 e.preventDefault();
@@ -222,6 +224,8 @@ $(document).ready(function() {
                 $("#topicDropdown span").first().text(topic);
                 $("#topicDropdown").data("value", topic);
                 fetchAndDisplayCourses();
+                // Optionally, hide the dropdown
+                dropdown.hide();
             });
 
             // Populate sort dropdown
@@ -231,13 +235,16 @@ $(document).ready(function() {
                 const newDropdownItem = $(`<a class="dropdown-item" href="#" data-value="${sort}">${sort}</a>`);
                 sortDropdownMenu.append(newDropdownItem);
             });
-            
+            const sortDropdownElement = document.getElementById("sortDropdown");
+            const sortDropdown = new bootstrap.Dropdown(sortDropdownElement);
+
             sortDropdownMenu.on("click", ".dropdown-item", function(e) {
                 e.preventDefault();
                 const sort = $(this).text();
                 $("#sortDropdown span").first().text(sort);
                 $("#sortDropdown").data("value", sort);
                 fetchAndDisplayCourses();
+                sortDropdown.hide();
             });
         },
         error: function() {
