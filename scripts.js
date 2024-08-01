@@ -75,7 +75,7 @@ $(document).ready(function() {
                     const card = $("<div>").addClass("card mx-3").append(
                         $("<img>").addClass("card-img-top img-fluid mx-auto").attr("src", data.thumb_url),
                         $("<div>").addClass("card-img-overlay d-flex text-center").append(
-                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "/images/play.png").attr("width", "55px")
+                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "images/play.png").attr("width", "55px")
                         ),
                       $("<div>").addClass("card-main").append(
                             $("<h5>").addClass("card-title").text(data.title),
@@ -148,7 +148,7 @@ $(document).ready(function() {
                     const card = $("<div>").addClass("card mx-3").append(
                         $("<img>").addClass("card-img-top img-fluid mx-auto").attr("src", data.thumb_url),
                         $("<div>").addClass("card-img-overlay d-flex text-center").append(
-                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "/images/play.png").attr("width", "55px")
+                            $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "images/play.png").attr("width", "55px")
                         ),
                       $("<div>").addClass("card-main").append(
                             $("<h5>").addClass("card-title").text(data.title),
@@ -275,7 +275,7 @@ function fetchAndDisplayCourses() {
                 const card = $("<div>").addClass("col-12 col-md-4 col-lg-3 mb-4").append(
                     $("<img>").addClass("card-img-top img-fluid mx-auto").attr("src", course.thumb_url),
                     $("<div>").addClass("card-img-overlay d-flex text-center").append(
-                        $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "/images/play.png").attr("width", "55px")
+                        $("<img>").addClass("play-overlay position-absolute top-50 start-50 translate-middle").attr("src", "images/play.png").attr("width", "55px")
                     ),
                     $("<div>").addClass("card-main").append(
                         $("<h5>").addClass("card-title").text(course.title),
