@@ -307,6 +307,28 @@ fetchAndDisplayCourses();
 // Fetch and display courses on input change
 $('#search-input').on('input', fetchAndDisplayCourses);
 
+ /* Bootup function to determine path and appropriate function calls */
+    
+    function bootUp() {
+        const path = window.location.pathname;
+        const basePath = "/smileschool-java/";
+
+        if (path === basePath || path === `${basePath}index.html`) {
+            fetchAndDisplayQuotes();
+            fetchAndDisplayTutorials();
+            fetchAndDisplayLatestVideos();
+        } else if (path === `${basePath}pricing.html`) {
+            fetchAndDisplayQuotes();
+        } else if (path === `${basePath}courses.html`) {
+            courseFilters();
+            fetchAndDisplayCourses();
+        }
+    }
+    
+    bootUp();
+
+    /*
+
 function bootUp() {
 
     const path = window.location.pathname;
@@ -324,25 +346,10 @@ function bootUp() {
 bootUp();
 });
 
+*/
+
     
-    /* Bootup function to determine path and appropriate function calls */
-    /*
-    function bootUp() {
-        const path = window.location.pathname;
-        const basePath = "/smileschool-java/";
-
-        if (path === basePath || path === `${basePath}index.html` || path === `${basePath}homepage.html`) {
-            fetchAndDisplayQuotes();
-            fetchAndDisplayTutorials();
-            fetchAndDisplayLatestVideos();
-        } else if (path === `${basePath}pricing.html`) {
-            fetchAndDisplayQuotes();
-        }
-    }
-        
-
-    bootUp();
-    */
+   
 
 
 
