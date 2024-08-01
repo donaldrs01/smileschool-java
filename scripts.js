@@ -224,7 +224,6 @@ $(document).ready(function() {
                 $("#topicDropdown span").first().text(topic);
                 $("#topicDropdown").data("value", topic);
                 fetchAndDisplayCourses();
-                // Optionally, hide the dropdown
                 dropdown.hide();
             });
 
