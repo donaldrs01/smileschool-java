@@ -327,22 +327,3 @@ $('#search-input').on('input', fetchAndDisplayCourses);
     
     bootUp();
 });
-
-/*
-function bootUp() {
-
-    const path = window.location.pathname;
-    if (path.includes("index.html")) {
-        fetchAndDisplayQuotes();
-        fetchAndDisplayTutorials();
-        fetchAndDisplayLatestVideos();
-    } else if (path.includes("pricing.html")) {
-        fetchAndDisplayQuotes();
-    } else if (path.includes("courses.html")) {
-        courseFilters();
-        fetchAndDisplayCourses();
-    }
-}
-bootUp();
-});
-*/
